@@ -11,10 +11,8 @@ print(sensor)
 window = 4
 
 # 2. Rolling statistics
-# Rolling mean via convolution with a uniform averaging kernel
 rolling_mean = np.convolve(sensor, np.ones(window) / window, mode='valid')
 
-# Rolling std via sliding window slices
 rolling_std = np.array([
     np.std(sensor[i:i + window]) for i in range(len(sensor) - window + 1)
 ])
@@ -32,7 +30,6 @@ print("\n--- Z-Score Normalization ---")
 print("Mean:", mean, "| Std:", std)
 print("Z-Scores:", zscores)
 
-# 4. Flag outliers (> 2 std dev)
 outlier_mask = np.abs(zscores) > 2
 outlier_indices = np.where(outlier_mask)[0]
 
