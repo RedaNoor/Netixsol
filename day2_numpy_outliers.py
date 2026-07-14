@@ -1,57 +1,44 @@
 import numpy as np
 
-# 1. Generate Synthetic Sensor Data (30 timesteps of 3 sensors)
-np.random.seed(42)  # For reproducible results
-time_steps = 30
-num_sensors = 3
+sensor = np.array([
+    18, 19, 20, 21, 22,
+    23, 24, 60, 25, 26,
+    27, 2, 28, 29, 30, 31
+])
+print("--- Raw Sensor Data ---")
+print(sensor)
 
-# Baseline trend + noise + some injected extreme outliers
-base_data = np.random.normal(loc=25.0, scale=2.0, size=(time_steps, num_sensors))
-# Inject artificial anomalies (outliers)
-base_data[5, 0] = 40.0
-base_data[15, 1] = 5.0
-base_data[25, 2] = 42.0
+window = 4
 
-sensor_data = base_data
-print("--- Raw Sensor Data Shape ---")
-print(sensor_data.shape)  # Should be (30, 3)
+# 2. Rolling statistics
+# Rolling mean via convolution with a uniform averaging kernel
+rolling_mean = np.convolve(sensor, np.ones(window) / window, mode='valid')
 
-print("\nFirst 3 rows of raw data:\n", sensor_data[:3])
+# Rolling std via sliding window slices
+rolling_std = np.array([
+    np.std(sensor[i:i + window]) for i in range(len(sensor) - window + 1)
+])
 
+print(f"\n--- Rolling Statistics (Window Size = {window}) ---")
+print("Rolling Mean:", rolling_mean)
+print("Rolling Std :", rolling_std)
 
-# 2. Compute Rolling Statistics (Window size = 5)
-window_size = 5
-windows = np.lib.stride_tricks.sliding_window_view(sensor_data, window_shape=window_size, axis=0)
+# 3. Z-score normalization
+mean = np.mean(sensor)
+std = np.std(sensor)
+zscores = (sensor - mean) / std
 
-rolling_mean = np.mean(windows, axis=-1)
-rolling_std = np.std(windows, axis=-1)
+print("\n--- Z-Score Normalization ---")
+print("Mean:", mean, "| Std:", std)
+print("Z-Scores:", zscores)
 
-print(f"\n--- Rolling Statistics (Window Size = {window_size}) ---")
-print(f"Rolling Mean Shape: {rolling_mean.shape}")  # (26, 3)
-print("First 3 rows of Rolling Mean:\n", rolling_mean[:3])
+# 4. Flag outliers (> 2 std dev)
+outlier_mask = np.abs(zscores) > 2
+outlier_indices = np.where(outlier_mask)[0]
 
-
-# 3. Normalize Data (Z-score normalization over the entire dataset per sensor)
-global_mean = np.mean(sensor_data, axis=0)
-global_std = np.std(sensor_data, axis=0)
-
-normalized_data = (sensor_data - global_mean) / global_std
-
-print("\n--- Global Stats per Sensor ---")
-print("Global Means:", global_mean)
-print("Global Std Devs:", global_std)
-print("\nFirst 3 rows of Normalized Data (Z-Scores):\n", normalized_data[:3])
-
-
-# 4. Flag Outliers (Z-score threshold > 2 or < -2 standard deviations)
-outlier_mask = np.abs(normalized_data) > 2.0
-outlier_indices = np.argwhere(outlier_mask)
-
-print("\n--- Detected Outliers (> 2 standard deviations) ---")
-print(f"Total outliers found: {np.sum(outlier_mask)}")
-print("\nIndex [Row, Sensor] and corresponding Raw Value:")
-for idx in outlier_indices:
-    row, col = idx[0], idx[1]
-    val = sensor_data[row, col]
-    z_score = normalized_data[row, col]
-    print(f"Row {row:2d}, Sensor {col}: Raw Value = {val:5.2f} (Z-score = {z_score:+5.2f})")
+print("\n--- Outliers Detected (> 2 Std Dev) ---")
+if len(outlier_indices) > 0:
+    for idx in outlier_indices:
+        print(f"Index {idx:2d}: Value = {sensor[idx]:5.2f}  Z-Score = {zscores[idx]:+5.2f}")
+else:
+    print("No outliers detected.")
