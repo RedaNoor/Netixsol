@@ -1,6 +1,6 @@
 # AFL Data Visualization Fundamentals
 
-Week 2 · Data Visualization Fundamentals (Matplotlib) 
+Week 2 · Data Visualization Fundamentals (Matplotlib)
 
 ## Overview
 
@@ -24,7 +24,7 @@ This notebook builds the 6 core chart types that cover most real-world explorato
 - Standardized `team` name casing
 - Imputed invalid `weight = 0` values with the dataset median
 - Filled missing numeric stats (e.g. goals, kicks) with 0, since a blank stat means the action didn't occur
-- Used an **inner join** to merge stats with demographics, so every row has complete information — no missing values anywhere in the final dataset
+- Used an **inner join** to merge stats with demographics, so every row has complete information, no missing values anywhere in the final dataset
 
 Dataset covers **1983–2025**.
 
@@ -45,7 +45,7 @@ pip install pandas numpy matplotlib seaborn
 ## How to Run
 
 1. Keep `merged_players.csv` in the same folder as the notebook (the notebook loads it with a relative path).
-2. Open `AFL_Visualizations.ipynb` in Jupyter.
+2. Open `AFL_Data_Visualization_Fundamentals.ipynb` in Jupyter.
 3. Run all cells top to bottom — charts are already rendered inline, but re-running regenerates them from the CSV.
 
 ## Chart Summary
@@ -58,7 +58,3 @@ pip install pandas numpy matplotlib seaborn
 | 4 | Boxplot | Comparing distributions across groups | Median individual scoring has declined every decade as squads rotate more players |
 | 5 | Scatter | Relationship between two variables | Height and weight are strongly correlated (r = 0.81) |
 | 6 | Heatmap | Many correlations at once | Disposal-related stats move together; hit-outs stand apart as a ruck-specific skill |
-
-## Concept Check
-
-The notebook also answers 5 concept-check questions covering when to use a bar chart vs. histogram, what a boxplot shows beyond a histogram, how to label a Matplotlib chart, what heatmaps are typically used for, and why pie charts struggle with many categories.
