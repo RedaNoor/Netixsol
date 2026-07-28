@@ -11,107 +11,20 @@ This project explores the `dvdrental` sample database using SQL JOINs to answer 
 Restored via pgAdmin's Restore tool (`Format: Custom or tar`) from `dvdrental.tar`. Contains 15 tables covering films, actors, customers, staff, stores, inventory, rentals, and payments.
 
 ## Relationship Diagram
+The following Entity Relationship Diagram (ERD) was generated using pgAdmin 4 and illustrates the relationships between the tables in the `dvdrental` database.
 
-```mermaid
-erDiagram
-  COUNTRY ||--o{ CITY : has
-  CITY ||--o{ ADDRESS : has
-  ADDRESS ||--o{ CUSTOMER : lives_at
-  ADDRESS ||--o{ STAFF : works_at
-  ADDRESS ||--o{ STORE : located_at
-  STORE ||--o{ CUSTOMER : serves
-  STORE ||--o{ STAFF : employs
-  STAFF ||--o{ STORE : manages
-  LANGUAGE ||--o{ FILM : spoken_in
-  FILM ||--o{ FILM_ACTOR : features
-  ACTOR ||--o{ FILM_ACTOR : acts_in
-  FILM ||--o{ FILM_CATEGORY : belongs_to
-  CATEGORY ||--o{ FILM_CATEGORY : groups
-  FILM ||--o{ INVENTORY : stocked_as
-  STORE ||--o{ INVENTORY : holds
-  INVENTORY ||--o{ RENTAL : rented_as
-  CUSTOMER ||--o{ RENTAL : rents
-  STAFF ||--o{ RENTAL : processes
-  CUSTOMER ||--o{ PAYMENT : pays
-  RENTAL ||--o{ PAYMENT : generates
-  STAFF ||--o{ PAYMENT : receives
+<p align="center">
+  <img src="ERD.png" alt="dvdrental Entity Relationship Diagram" width="100%">
+</p>
 
-  COUNTRY {
-    int country_id PK
-    string country
-  }
-  CITY {
-    int city_id PK
-    int country_id FK
-    string city
-  }
-  ADDRESS {
-    int address_id PK
-    int city_id FK
-    string address
-  }
-  CUSTOMER {
-    int customer_id PK
-    int store_id FK
-    int address_id FK
-    string first_name
-  }
-  STAFF {
-    int staff_id PK
-    int address_id FK
-    int store_id FK
-    string first_name
-  }
-  STORE {
-    int store_id PK
-    int manager_staff_id FK
-    int address_id FK
-  }
-  LANGUAGE {
-    int language_id PK
-    string name
-  }
-  FILM {
-    int film_id PK
-    int language_id FK
-    string title
-  }
-  CATEGORY {
-    int category_id PK
-    string name
-  }
-  FILM_CATEGORY {
-    int film_id PK,FK
-    int category_id PK,FK
-  }
-  ACTOR {
-    int actor_id PK
-    string first_name
-  }
-  FILM_ACTOR {
-    int actor_id PK,FK
-    int film_id PK,FK
-  }
-  INVENTORY {
-    int inventory_id PK
-    int film_id FK
-    int store_id FK
-  }
-  RENTAL {
-    int rental_id PK
-    int inventory_id FK
-    int customer_id FK
-    int staff_id FK
-  }
-  PAYMENT {
-    int payment_id PK
-    int customer_id FK
-    int staff_id FK
-    int rental_id FK
-    numeric amount
-  }
-```
-*(Renders automatically on GitHub. Also generated live in pgAdmin via right-click `public` schema → ERD For Schema — see `screenshots/er_diagram.png`.)*
+The ERD shows:
+
+- Primary and foreign key relationships between tables.
+- One-to-one, one-to-many, and many-to-many relationships.
+- Junction tables (`film_actor` and `film_category`) used to model many-to-many relationships.
+- How customer, rental, payment, inventory, film, actor, category, store, address, city, and country tables are connected.
+
+> **Note:** The diagram was generated using the built-in **ERD Tool** in pgAdmin 4.
 
 ## JOIN Types Used
 
