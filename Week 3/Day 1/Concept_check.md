@@ -51,4 +51,4 @@ Use it to preview data, get "top N" results (with `ORDER BY`), or avoid pulling 
 Functions that collapse multiple rows into one summary value,  `COUNT()`, `SUM()`, `AVG()`, `MIN()`, `MAX()`. Most useful combined with `GROUP BY`, e.g. average profit per category.
 
 ### 10. Why do Data Scientists prefer databases over Excel for large datasets?
-Databases scale far beyond Excel's ~1M row limit, query faster through indexing, enforce data integrity, support concurrent access, and integrate directly into code/pipelines (e.g. `pd.read_sql()`). Excel workflows are slower, manual, and harder to reproduce.
+Databases scale far beyond Excel's ~1M row limit, query faster through indexing, enforce data integrity, support concurrent access, and integrate directly into code/pipelines (e.g. `pd.read_sql()`).  Excel workflows are slower, manual, and harder to reproduce.
