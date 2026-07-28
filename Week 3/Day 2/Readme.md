@@ -54,8 +54,6 @@ The ERD shows:
 
 ## Business Insights
 
-> The three insights below should be filled in with your actual result values once you run `joins.sql` against your database — every student's `dvdrental` copy returns identical values since it's the same standard sample dataset, but you should confirm the exact figures yourself rather than take these as given. Structure to follow:
-
 1. **Top customer spend concentration** — from Question 4, note how much the top-spending customer paid versus the average, and whether spend is fairly even across the top 10 or concentrated in a few big spenders.
 2. **Revenue by category** — from Question 8, identify which film category actually drives the most revenue, and note whether it matches the category with the most films (Question 7) or diverges — a category with fewer films but higher revenue suggests higher rental rates or higher rental frequency.
 3. **Geographic revenue distribution** — from Question 10, note whether rental revenue is concentrated in a handful of cities or spread evenly, which has direct implications for where a real DVD rental business would prioritize store locations or marketing spend.
