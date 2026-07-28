@@ -39,16 +39,26 @@ The ERD shows:
 
 ## How Each Business Question Was Solved
 
-1. **Customer Name, Email, City, Country** — chained four tables (`customer → address → city → country`) since geographic data is normalized across three separate levels rather than stored directly on the customer record.
-2. **Payment with Customer Name, Film Title, Amount** — `payment` has no direct link to `film`; the path runs through `rental → inventory → film`, since `inventory` is what actually ties a physical copy to a film title.
-3. **(Duplicate of Q2 in the task sheet)** — same query as above applies.
-4. **Top 10 customers by total spent** — joined `customer` to `payment` directly (they do share a foreign key), then `GROUP BY` customer with `SUM(amount)`, sorted descending, capped with `LIMIT 10`.
-5. **Film with Category and Rental Rate** — `film` and `category` have a many-to-many relationship, resolved through the `film_category` junction table.
-6. **Actors per film** — joined through `film_actor` (another junction table) to `actor`, then used `STRING_AGG` to collapse multiple actor rows into one comma-separated list per film.
-7. **Film count per category** — joined `category → film_category`, then `COUNT()` the linked films, grouped by category name.
-8. **Highest revenue by category** — the longest chain in this task: `category → film_category → film → inventory → rental → payment`, since revenue data (`payment`) sits five tables away from `category`.
-9. **Customers who rented more than 20 films** — joined `customer → rental`, grouped by customer, and filtered on the aggregated count using `HAVING` (not `WHERE`, since the filter applies to `COUNT()`, an aggregate).
-10. **Highest revenue by city** — joined `city → address → customer → payment`, aggregating payment amounts by city.
+1. **Customer Name, Email, City, Country** 
+Chained four tables (`customer → address → city → country`) since geographic data is normalized across three separate levels rather than stored directly on the customer record.
+2. **Payment with Customer Name, Film Title, Amount** 
+`payment` has no direct link to `film`; the path runs through `rental → inventory → film`, since `inventory` is what actually ties a physical copy to a film title.
+3. **(Duplicate of Q2 in the task sheet)** 
+Same query as above applies.
+4. **Top 10 customers by total spent** 
+Joined `customer` to `payment` directly (they do share a foreign key), then `GROUP BY` customer with `SUM(amount)`, sorted descending, capped with `LIMIT 10`.
+5. **Film with Category and Rental Rate**  
+`film` and `category` have a many-to-many relationship, resolved through the `film_category` junction table.
+6. **Actors per film** 
+Joined through `film_actor` (another junction table) to `actor`, then used `STRING_AGG` to collapse multiple actor rows into one comma-separated list per film.
+7. **Film count per category** 
+Joined `category → film_category`, then `COUNT()` the linked films, grouped by category name.
+8. **Highest revenue by category** 
+The longest chain in this task: `category → film_category → film → inventory → rental → payment`, since revenue data (`payment`) sits five tables away from `category`.
+9. **Customers who rented more than 20 films** 
+Joined `customer → rental`, grouped by customer, and filtered on the aggregated count using `HAVING` (not `WHERE`, since the filter applies to `COUNT()`, an aggregate).
+10. **Highest revenue by city** 
+Joined `city → address → customer → payment`, aggregating payment amounts by city.
 
 **Bonus Challenge**:
 Actor with highest rental revenue: `actor` and `payment` share no foreign key, so the path runs through every functional layer of the schema: `actor → film_actor → film → inventory → rental → payment`. This is the shortest possible chain, since each step is a required one-hop link (no shortcut exists in this schema).
