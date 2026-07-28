@@ -1,4 +1,4 @@
-# Concept Check — SQL Joins & Relational Database Analysis
+# Concept Check: SQL Joins & Relational Database Analysis
 
 ### 1. Why do relational databases split data into multiple tables?
 To eliminate redundancy and keep each fact stored in exactly one place. Instead of repeating a customer's details on every rental row, a `customer` table holds it once and `rental` references it via a foreign key. This avoids update anomalies (updating one field everywhere it's duplicated) and keeps data consistent.
