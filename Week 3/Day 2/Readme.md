@@ -50,7 +50,8 @@ The ERD shows:
 9. **Customers who rented more than 20 films** — joined `customer → rental`, grouped by customer, and filtered on the aggregated count using `HAVING` (not `WHERE`, since the filter applies to `COUNT()`, an aggregate).
 10. **Highest revenue by city** — joined `city → address → customer → payment`, aggregating payment amounts by city.
 
-**Bonus Challenge** — actor with highest rental revenue: `actor` and `payment` share no foreign key, so the path runs through every functional layer of the schema: `actor → film_actor → film → inventory → rental → payment`. This is the shortest possible chain, since each step is a required one-hop link (no shortcut exists in this schema).
+**Bonus Challenge**:
+Actor with highest rental revenue: `actor` and `payment` share no foreign key, so the path runs through every functional layer of the schema: `actor → film_actor → film → inventory → rental → payment`. This is the shortest possible chain, since each step is a required one-hop link (no shortcut exists in this schema).
 
 ## Business Insights
 
