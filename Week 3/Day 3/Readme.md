@@ -2,7 +2,7 @@
 
 ## Overview
 
-This one builds on SQL JOINs by introducing aggregation, subqueries, Common Table Expressions (CTEs), and window functions. The goal is to answer more complex business questions by summarizing data, breaking queries into smaller steps, and ranking results.
+This task builds on SQL JOINs by introducing aggregation, subqueries, Common Table Expressions (CTEs), and window functions. The goal is to answer more complex business questions by summarizing data, breaking queries into smaller steps, and ranking results.
 
 ---
 
@@ -106,7 +106,7 @@ Example:
 
 ### Insight 1: Store Performance
 
-Store 2 generated slightly more revenue than Store 1, earning $31,059.92 compared to $30,252.12. The gap is small, so both stores are performing at a similar level overall.
+Store 2 generated slightly more revenue than Store 1, earning `$31,059.92` compared to `$30,252.12`. The gap is small, so both stores are performing at a similar level overall.
 
 ### Insight 2: Staff Revenue ConcentratioN
 
@@ -114,7 +114,7 @@ The bonus query shows something the store-level totals hide: each store has exac
 
 ### Insight 3: Film Performance
 
-Revenue doesn't track catalog size. Categories with over 50 films each (Sports, Foreign, Family, Documentary, Animation, Action) aren't necessarily the top earners, since a handful of consistently popular titles can outperform a much bigger catalog. For example, "Fool Mockingbird" led the Action category at $162.79, while "Dogma Family" topped Animation at $168.72. Promoting proven favorites like these is likely to move the needle more than simply stocking more titles in a category.
+Revenue doesn't track catalog size. Categories with over 50 films each (Sports, Foreign, Family, Documentary, Animation, Action) aren't necessarily the top earners, since a handful of consistently popular titles can outperform a much bigger catalog. For example, "Fool Mockingbird" led the Action category at `$162.79`, while "Dogma Family" topped Animation at `$168.72`. Promoting proven favorites like these is likely to move the needle more than simply stocking more titles in a category.
 
 **An extra insight:** rental volume and revenue growth don't move together month to month. The number of rentals rises and falls, and the month-over-month growth percentage swings between strongly positive and negative rather than following a steady trend, so revenue can't be predicted from rental counts alone.
 
