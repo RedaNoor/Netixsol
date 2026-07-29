@@ -130,7 +130,7 @@ screenshots/
     Part 1/
     Part 2/
     Part 3/
-    Bonus Challenge/
+    Bonus Challenge
 ```
 
 ---

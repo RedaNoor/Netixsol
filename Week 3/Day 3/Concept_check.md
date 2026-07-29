@@ -1,22 +1,16 @@
-# Concept Check: SQL Aggregation, Subqueries & CTEs
+# Concept Check
 
-## 1. What is the difference between `WHERE` and `HAVING`?
+### 1. What is the difference between WHERE and HAVING?
 
-- `WHERE` filters rows **before** grouping.
-- `HAVING` filters groups **after** `GROUP BY`.
-- `WHERE` cannot use aggregate functions, while `HAVING` can.
+WHERE filters the raw rows before anything gets grouped. HAVING filters after GROUP BY has already done its thing, so it works on the grouped totals instead of individual rows.
 
-**Example:**
+Basically if I want to filter on something like SUM() or COUNT(), it has to be HAVING, since that number doesn't exist yet when WHERE runs.
 
 ```sql
--- WHERE filters rows
-SELECT *
-FROM payment
-WHERE amount > 5;
-```
+-- WHERE, filtering raw rows
+SELECT * FROM payment WHERE amount > 5;
 
-```sql
--- HAVING filters groups
+-- HAVING, filtering after grouping
 SELECT customer_id, SUM(amount) AS total_spent
 FROM payment
 GROUP BY customer_id
@@ -25,14 +19,12 @@ HAVING SUM(amount) > 150;
 
 ---
 
-## 2. When would you use a correlated subquery instead of a JOIN?
+### 2. When would you use a correlated subquery instead of a JOIN?
 
-A correlated subquery is used when the inner query depends on the current row of the outer query. It executes once for each row returned by the outer query.
-
-**Example:**
+When the inner query actually needs info from the outer row to run, like "give me the max rate in THIS film's category." A regular join can't really do a per-row comparison like that on its own, it just combines tables. A correlated subquery re-runs once per outer row because it's referencing that row.
 
 ```sql
-SELECT c.name, f.title
+SELECT f.title, c.name
 FROM film f
 JOIN film_category fc ON f.film_id = fc.film_id
 JOIN category c ON fc.category_id = c.category_id
@@ -46,16 +38,11 @@ WHERE f.rental_rate = (
 
 ---
 
-## 3. What is a CTE, and why is it more readable than a nested subquery?
+### 3. What is a CTE, and why is it more readable than a nested subquery?
 
-A **Common Table Expression (CTE)** is a temporary result set created using the `WITH` clause. It exists only during the execution of the query.
+A CTE is just a query you name using WITH, so you can reuse it or build on it later in the same statement. It's basically a temporary named result that only exists while that query runs.
 
-CTEs improve readability because they:
-- Break complex queries into smaller steps.
-- Give meaningful names to intermediate results.
-- Make queries easier to read, debug, and maintain.
-
-**Example:**
+The reason it's more readable is nested subqueries force you to read from the inside out, which gets confusing fast once you're 2-3 levels deep. A CTE reads top to bottom like steps: do this first, then do that with it.
 
 ```sql
 WITH customer_totals AS (
@@ -63,22 +50,19 @@ WITH customer_totals AS (
     FROM payment
     GROUP BY customer_id
 )
-SELECT *
-FROM customer_totals
-WHERE total_spent > 100;
+SELECT * FROM customer_totals WHERE total_spent > 100;
 ```
 
 ---
 
-## 4. Explain the difference between `RANK()` and `DENSE_RANK()`.
+### 4. Explain the difference between RANK() and DENSE_RANK().
 
-Both functions assign rankings, but they handle ties differently.
+Both give a ranking, the only difference is what happens after a tie.
 
-- `RANK()` skips the next rank after a tie.
-- `DENSE_RANK()` does not skip ranks.
+RANK() leaves a gap, so if two rows tie for 2nd, the next row jumps to 4th. DENSE_RANK() doesn't leave that gap, so the next row is just 3rd.
 
-| Score | RANK() | DENSE_RANK() |
-|------:|-------:|-------------:|
+| score | RANK() | DENSE_RANK() |
+|---|---|---|
 | 98 | 1 | 1 |
 | 92 | 2 | 2 |
 | 92 | 2 | 2 |
@@ -86,71 +70,42 @@ Both functions assign rankings, but they handle ties differently.
 
 ---
 
-## 5. What does `PARTITION BY` do differently from `GROUP BY`?
+### 5. What does PARTITION BY do differently from GROUP BY?
 
-- `GROUP BY` combines rows into one row per group.
-- `PARTITION BY` keeps all rows and performs calculations separately within each partition.
-
-**Example:**
+GROUP BY squashes everything into one row per group, you lose the individual rows. PARTITION BY keeps every row but still lets you calculate something per group, like a running total or a rank, right next to the original data.
 
 ```sql
-SELECT customer_id,
-       amount,
+SELECT customer_id, amount,
        SUM(amount) OVER (PARTITION BY customer_id) AS total_spent
 FROM payment;
 ```
 
+Here you still see every payment row, just with each customer's total tagged on next to it.
+
 ---
 
-## 6. Can a subquery return multiple rows? What operator would you use in that case?
+### 6. Can a subquery return multiple rows? What operator would you use in that case?
 
-Yes. A subquery can return multiple rows.
-
-Use operators such as:
-
-- `IN`
-- `NOT IN`
-- `EXISTS`
-- `NOT EXISTS`
-- `ANY`
-- `ALL`
-
-**Example:**
+Yeah, plenty of subqueries return more than one row, you just can't use = on those, since = only expects one value. Instead use IN, NOT IN, EXISTS, NOT EXISTS, ANY, or ALL.
 
 ```sql
-SELECT *
-FROM customer
+SELECT * FROM customer
 WHERE customer_id IN (
-    SELECT customer_id
-    FROM payment
-    WHERE amount > 10
+    SELECT customer_id FROM payment WHERE amount > 10
 );
 ```
 
 ---
 
-## 7. Give an example of when `CASE WHEN` is useful inside an aggregate function.
+### 7. Give an example of when CASE WHEN is useful inside an aggregate function.
 
-`CASE WHEN` is commonly used for **conditional aggregation**, where only rows meeting a condition are included in the calculation.
-
-**Example: Sum payments greater than $5**
+When we want to count or sum only rows that meet some condition, without writing a separate query for it. It's basically a way to sneak an if/else into an aggregate.
 
 ```sql
 SELECT
-    SUM(CASE
-            WHEN amount > 5 THEN amount
-            ELSE 0
-        END) AS high_value_revenue
+    SUM(CASE WHEN amount > 5 THEN amount ELSE 0 END) AS high_value_revenue,
+    SUM(CASE WHEN amount > 5 THEN 1 ELSE 0 END) AS high_value_payments
 FROM payment;
 ```
 
-**Example: Count payments greater than $5**
-
-```sql
-SELECT
-    SUM(CASE
-            WHEN amount > 5 THEN 1
-            ELSE 0
-        END) AS high_value_payments
-FROM payment;
-```
+Both numbers come out of the same table scan instead of running two separate queries.

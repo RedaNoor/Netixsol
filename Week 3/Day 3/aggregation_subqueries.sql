@@ -152,7 +152,7 @@ SELECT
     total_spent,
     RANK() OVER ( PARTITION BY city ORDER BY total_spent DESC) AS city_rank
 FROM customer_spend
-ORDER BY city_rank,city;
+ORDER BY city, city_rank;
 
 
 -- 10. Most recently rented film for each customer (ROW_NUMBER)
