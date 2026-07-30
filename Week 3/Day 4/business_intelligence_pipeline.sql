@@ -254,9 +254,9 @@ employee_leaderboard AS (
 -- Stage-by-stage preview (Please uncomment one at a time in pgAdmin)
 
 -- Task 1:
-SELECT * 
-FROM customer_profile 
-ORDER BY total_spent DESC;
+-- SELECT * 
+-- FROM customer_profile 
+-- ORDER BY total_spent DESC;
 
 -- Task 2: 
 -- SELECT * 
@@ -281,78 +281,78 @@ ORDER BY total_spent DESC;
 -- ORDER BY country_rank;
 
 -- Task 5: final executive report, built entirely from the CTEs above
--- SELECT report_stage, label, detail, metric_name, metric_value
--- FROM (
---     -- 1. Customer Segment Summary
---     SELECT 1 AS stage_order, 'Segment Summary' AS report_stage, customer_segment AS label,
---            NULL::text AS detail, 'Customers' AS metric_name,
---            COUNT(*)::numeric AS metric_value, MIN(loyalty_points) AS sort_key
---     FROM customer_segments
---     GROUP BY customer_segment
+/*SELECT report_stage, label, detail, metric_name, metric_value
+FROM (
+    -- 1. Customer Segment Summary
+    SELECT 1 AS stage_order, 'Segment Summary' AS report_stage, customer_segment AS label,
+           NULL::text AS detail, 'Customers' AS metric_name,
+           COUNT(*)::numeric AS metric_value, MIN(loyalty_points) AS sort_key
+    FROM customer_segments
+    GROUP BY customer_segment
 
---     UNION ALL
---     -- 2. Revenue by Segment
---     SELECT 2, 'Revenue by Segment', customer_segment, NULL,
---            'Revenue ($)', ROUND(SUM(total_spent), 2), MIN(loyalty_points)
---     FROM customer_segments
---     GROUP BY customer_segment
+    UNION ALL
+    -- 2. Revenue by Segment
+    SELECT 2, 'Revenue by Segment', customer_segment, NULL,
+           'Revenue ($)', ROUND(SUM(total_spent), 2), MIN(loyalty_points)
+    FROM customer_segments
+    GROUP BY customer_segment
 
---     UNION ALL
---     -- 3. Top Customer in each Segment
---     SELECT 3, 'Top Customer per Segment', full_name, customer_segment,
---            'Total Spent ($)', ROUND(total_spent, 2), loyalty_points
---     FROM (
---         SELECT *, ROW_NUMBER() OVER (
---             PARTITION BY customer_segment ORDER BY loyalty_points DESC, total_spent DESC
---         ) AS rn
---         FROM customer_segments
---     ) ranked_customers
---     WHERE rn = 1
+    UNION ALL
+    -- 3. Top Customer in each Segment
+    SELECT 3, 'Top Customer per Segment', full_name, customer_segment,
+           'Total Spent ($)', ROUND(total_spent, 2), loyalty_points
+    FROM (
+        SELECT *, ROW_NUMBER() OVER (
+            PARTITION BY customer_segment ORDER BY loyalty_points DESC, total_spent DESC
+        ) AS rn
+        FROM customer_segments
+    ) ranked_customers
+    WHERE rn = 1
 
---     UNION ALL
---     -- 4. Top Genre in each Segment
---     SELECT 4, 'Top Genre per Segment', top_genre, customer_segment,
---            'Fans in Segment', fans_in_segment::numeric,
---            CASE customer_segment
---                WHEN 'Platinum' THEN 1 WHEN 'Gold' THEN 2
---                WHEN 'Silver'  THEN 3 ELSE 4
---            END
---     FROM segment_top_genre
+    UNION ALL
+    -- 4. Top Genre in each Segment
+    SELECT 4, 'Top Genre per Segment', top_genre, customer_segment,
+           'Fans in Segment', fans_in_segment::numeric,
+           CASE customer_segment
+               WHEN 'Platinum' THEN 1 WHEN 'Gold' THEN 2
+               WHEN 'Silver'  THEN 3 ELSE 4
+           END
+    FROM segment_top_genre
 
---     UNION ALL
---     -- 5. Best Performing Country
---     SELECT 5, 'Best Performing Country', country, 'Rank #' || country_rank,
---            'Expansion Score', expansion_score, 1
---     FROM country_expansion_score
---     WHERE country_rank = 1
+    UNION ALL
+    -- 5. Best Performing Country
+    SELECT 5, 'Best Performing Country', country, 'Rank #' || country_rank,
+           'Expansion Score', expansion_score, 1
+    FROM country_expansion_score
+    WHERE country_rank = 1
 
---     UNION ALL
---     -- 6. Revenue Contribution by Country (top 5 only, filtered below)
---     SELECT 6, 'Revenue by Country ', country, NULL,
---            '% of Total Revenue',
---            ROUND(100 * total_revenue / SUM(total_revenue) OVER (), 1),
---            RANK() OVER (ORDER BY total_revenue DESC)
---     FROM country_expansion_score
+    UNION ALL
+    -- 6. Revenue Contribution by Country (top 5 only, filtered below)
+    SELECT 6, 'Revenue by Country ', country, NULL,
+           '% of Total Revenue',
+           ROUND(100 * total_revenue / SUM(total_revenue) OVER (), 1),
+           RANK() OVER (ORDER BY total_revenue DESC)
+    FROM country_expansion_score
 
---     UNION ALL
---     -- 7. Top Employee by Revenue
---     SELECT 7, 'Top Employee by Revenue', employee_name, title,
---            'Revenue ($)', ROUND(total_revenue, 2), 1
---     FROM employee_leaderboard
---     WHERE employee_rank = 1
+    UNION ALL
+    -- 7. Top Employee by Revenue
+    SELECT 7, 'Top Employee by Revenue', employee_name, title,
+           'Revenue ($)', ROUND(total_revenue, 2), 1
+    FROM employee_leaderboard
+    WHERE employee_rank = 1
 
---     UNION ALL
---     -- 8. Top Artist by Revenue
---     SELECT 8, 'Top Artist by Revenue', artist_name, NULL,
---            'Revenue ($)', ROUND(total_revenue, 2), 1
---     FROM artist_leaderboard
---     WHERE artist_rank = 1
+    UNION ALL
+    -- 8. Top Artist by Revenue
+    SELECT 8, 'Top Artist by Revenue', artist_name, NULL,
+           'Revenue ($)', ROUND(total_revenue, 2), 1
+    FROM artist_leaderboard
+    WHERE artist_rank = 1
 
---     UNION ALL
---     -- 9. Top Album by Revenue
---     SELECT 9, 'Top Album by Revenue', album_title, artist_name,
---            'Revenue ($)', ROUND(total_revenue, 2), 1
---     FROM album_leaderboard
---     WHERE album_rank = 1
--- ) executive_dashboard
--- ORDER BY stage_order, sort_key, metric_value DESC;
+    UNION ALL
+    -- 9. Top Album by Revenue
+    SELECT 9, 'Top Album by Revenue', album_title, artist_name,
+           'Revenue ($)', ROUND(total_revenue, 2), 1
+    FROM album_leaderboard
+    WHERE album_rank = 1
+) executive_dashboard
+ORDER BY stage_order, sort_key, metric_value DESC;*/

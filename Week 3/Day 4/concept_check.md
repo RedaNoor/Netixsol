@@ -9,7 +9,7 @@ GROUP BY collapses a table down to one row per group — you lose the individual
 
 **3. Explain the difference between ROW_NUMBER(), RANK(), and DENSE_RANK().**
 All three number rows within an ordering, but they disagree on what to do with ties. Say three customers are tied for the 2nd-highest spend:
-- **ROW_NUMBER()** ignores the tie and just hands out 1, 2, 3, 4 in some order — no two rows ever share a number.
+- **ROW_NUMBER()** ignores the tie and just hands out 1, 2, 3, 4 in some order, no two rows ever share a number.
 - **RANK()** gives the tied rows the same number, then skips ahead: 1, 2, 2, 4.
 - **DENSE_RANK()** gives the tied rows the same number too, but doesn't skip: 1, 2, 2, 3.
 Pick **ROW_NUMBER()** when you need a strict "keep exactly one row per group" filter, **RANK() / DENSE_RANK** when ties should genuinely share a position.
