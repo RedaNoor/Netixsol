@@ -1,7 +1,8 @@
 # Enterprise Analytics Pipeline using AdventureWorks
 
 ## Project Documentation Report
-**Author:** Rida Noor
+
+**Author:** Rida Noor  
 **Database:** AdventureWorks (PostgreSQL)  
 **Language:** SQL (PostgreSQL)  
 **Tools:** PostgreSQL, pgAdmin 4, Jupyter Notebook, Python, Pandas, SQLAlchemy, Matplotlib
