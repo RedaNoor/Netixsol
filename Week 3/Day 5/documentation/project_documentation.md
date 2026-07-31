@@ -1,9 +1,7 @@
 # Enterprise Analytics Pipeline using AdventureWorks
 
 ## Project Documentation Report
-
-**Author:** Rameen Fatima  
-**Program:** AI Intern – Netixsol  
+**Author:** Rida Noor
 **Database:** AdventureWorks (PostgreSQL)  
 **Language:** SQL (PostgreSQL)  
 **Tools:** PostgreSQL, pgAdmin 4, Jupyter Notebook, Python, Pandas, SQLAlchemy, Matplotlib
