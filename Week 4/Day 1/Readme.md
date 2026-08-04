@@ -1,7 +1,5 @@
 # Adult Income Baseline
 
-Author: Rida Noor
-
 A reproducible baseline for predicting whether a person earns more than 50K a year, using the UCI Adult (Census Income) dataset. This is the starting point for a week of modeling work: it sets up the problem definition, a proper hold-out split, and two baselines that any real model needs to beat.
 
 ## Business framing
