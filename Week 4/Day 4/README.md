@@ -90,12 +90,7 @@ All preprocessing, feature engineering, model training, calibration, and evaluat
 
 ## Project Structure
 
-```
-## Project Structure
-
-## Project Structure
-
-```
+```text
 .
 ├── day4_model_tuning.ipynb
 ├── adult_income_pipeline.joblib
