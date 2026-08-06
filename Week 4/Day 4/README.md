@@ -93,7 +93,10 @@ All preprocessing, feature engineering, model training, calibration, and evaluat
 ```
 ## Project Structure
 
+## Project Structure
+
 ```
+.
 ├── day4_model_tuning.ipynb
 ├── adult_income_pipeline.joblib
 ├── README.md
@@ -102,7 +105,6 @@ All preprocessing, feature engineering, model training, calibration, and evaluat
     ├── day4_model_tuning_50_iterations.ipynb
     └── outputs/
 ```
----
 
 > **Note:** The main notebook uses a reduced RandomizedSearchCV search budget for faster execution. A separate folder named **`50_iterations`** contains the notebook and outputs generated using **50 RandomizedSearchCV iterations**, as recommended in the assignment, for more extensive hyperparameter tuning.
 ```
