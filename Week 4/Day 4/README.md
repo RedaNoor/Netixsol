@@ -92,12 +92,12 @@ All preprocessing, feature engineering, model training, calibration, and evaluat
 
 ```text
 .
-├── day4_model_tuning.ipynb
+├── model_tuning.ipynb
 ├── adult_income_pipeline.joblib
 ├── README.md
 ├── tuning_report.pdf
 └── 50_iterations/
-    ├── day4_model_tuning_50_iterations.ipynb
+    ├── model_tuning_50_iterations.ipynb
     └── outputs/
 ```
 
