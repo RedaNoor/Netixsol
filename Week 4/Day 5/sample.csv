@@ -1,0 +1,11 @@
+age,workclass,education,education-num,marital-status,occupation,relationship,race,sex,capital-gain,capital-loss,hours-per-week,native-country
+25,Private,HS-grad,9,Never-married,Other-service,Own-child,White,Male,0,0,20,United-States
+35,State-gov,Bachelors,13,Married-civ-spouse,Adm-clerical,Husband,White,Male,0,0,40,United-States
+50,Self-emp-not-inc,Masters,14,Married-civ-spouse,Exec-managerial,Husband,White,Male,25000,0,55,United-States
+28,Private,Some-college,10,Never-married,Sales,Not-in-family,Black,Female,0,0,35,United-States
+42,Private,Bachelors,13,Married-civ-spouse,Prof-specialty,Wife,White,Female,5000,0,45,United-States
+60,Self-emp-inc,Doctorate,16,Married-civ-spouse,Exec-managerial,Husband,White,Male,100000,0,60,United-States
+22,Private,HS-grad,9,Never-married,Craft-repair,Not-in-family,White,Male,0,0,38,United-States
+55,Local-gov,Masters,14,Married-civ-spouse,Exec-managerial,Husband,White,Male,0,0,45,United-States
+30,Private,Assoc-voc,11,Divorced,Transport-moving,Not-in-family,White,Male,0,0,50,United-States
+45,Private,Some-college,10,Married-civ-spouse,Farming-fishing,Husband,White,Male,0,0,30,United-States

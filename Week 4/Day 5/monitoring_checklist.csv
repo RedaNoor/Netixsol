@@ -1,0 +1,7 @@
+Metric,What to Monitor,Alert Threshold,Retraining Cadence
+Data Drift,"Feature distribution changes (PSI, KS Test)",PSI > 0.20,Monthly
+Target Distribution,Percentage of positive income labels in newly labeled data,>10% change from training distribution,Monthly
+Prediction Distribution,Percentage of predicted positive cases,>10% change from deployment baseline,Weekly
+Model Precision,Precision on newly labeled data,Drop below 0.85,Quarterly
+Missing Values,Missing values and invalid inputs at the API boundary,>5% missing values,Weekly
+Inference Latency,Average prediction time per request,>200 ms per prediction,Monthly
