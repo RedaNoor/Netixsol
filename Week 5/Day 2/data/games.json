@@ -1,0 +1,146 @@
+[
+  {
+    "title": "The Legend of Zelda: Breath of the Wild",
+    "developer": "Nintendo",
+    "release_year": 2017,
+    "genre": "Action-Adventure",
+    "platform": "Switch",
+    "avg_completion_hours": 50
+  },
+  {
+    "title": "Elden Ring",
+    "developer": "FromSoftware",
+    "release_year": 2022,
+    "genre": "Action RPG",
+    "platform": "PC, PS5, Xbox Series X/S",
+    "avg_completion_hours": 55
+  },
+  {
+    "title": "Portal 2",
+    "developer": "Valve",
+    "release_year": 2011,
+    "genre": "Puzzle-Platformer",
+    "platform": "PC, PS3, Xbox 360",
+    "avg_completion_hours": 8
+  },
+  {
+    "title": "Stardew Valley",
+    "developer": "ConcernedApe",
+    "release_year": 2016,
+    "genre": "Simulation",
+    "platform": "PC, Switch, PS4, Xbox One",
+    "avg_completion_hours": 52
+  },
+  {
+    "title": "Hades",
+    "developer": "Supergiant Games",
+    "release_year": 2020,
+    "genre": "Roguelike",
+    "platform": "PC, Switch, PS5, Xbox Series X/S",
+    "avg_completion_hours": 21
+  },
+  {
+    "title": "God of War",
+    "developer": "Santa Monica Studio",
+    "release_year": 2018,
+    "genre": "Action-Adventure",
+    "platform": "PS4, PC",
+    "avg_completion_hours": 20
+  },
+  {
+    "title": "Red Dead Redemption 2",
+    "developer": "Rockstar Games",
+    "release_year": 2018,
+    "genre": "Action-Adventure",
+    "platform": "PC, PS4, Xbox One",
+    "avg_completion_hours": 49
+  },
+  {
+    "title": "Celeste",
+    "developer": "Extremely OK Games",
+    "release_year": 2018,
+    "genre": "Platformer",
+    "platform": "PC, Switch, PS4, Xbox One",
+    "avg_completion_hours": 9
+  },
+  {
+    "title": "The Witcher 3: Wild Hunt",
+    "developer": "CD Projekt Red",
+    "release_year": 2015,
+    "genre": "Action RPG",
+    "platform": "PC, PS4, Xbox One, Switch",
+    "avg_completion_hours": 51
+  },
+  {
+    "title": "Among Us",
+    "developer": "Innersloth",
+    "release_year": 2018,
+    "genre": "Social Deduction",
+    "platform": "PC, Mobile, Switch, PS4/5, Xbox",
+    "avg_completion_hours": 1
+  },
+  {
+    "title": "PUBG",
+    "developer": "KRAFTON",
+    "release_year": 2017,
+    "genre": "Battle Royale",
+    "platform": "PC, Mobile, PlayStation, Xbox",
+    "avg_completion_hours": 1
+  },
+  {
+    "title": "Clash of Clans",
+    "developer": "Supercell",
+    "release_year": 2012,
+    "genre": "Strategy",
+    "platform": "Mobile",
+    "avg_completion_hours": 1
+  },
+  {
+    "title": "Tekken 8",
+    "developer": "Bandai Namco Studios",
+    "release_year": 2024,
+    "genre": "Fighting",
+    "platform": "PC, PS5, Xbox Series X/S",
+    "avg_completion_hours": 1
+  },
+  {
+    "title": "Grand Theft Auto V",
+    "developer": "Rockstar Games",
+    "release_year": 2013,
+    "genre": "Action-Adventure",
+    "platform": "PC, PS4, PS5, Xbox",
+    "avg_completion_hours": 32
+  },
+  {
+    "title": "Asphalt 9",
+    "developer": "Gameloft",
+    "release_year": 2018,
+    "genre": "Racing",
+    "platform": "PC, Mobile, Switch",
+    "avg_completion_hours": 2
+  },
+  {
+    "title": "Among Us",
+    "developer": "Innersloth",
+    "release_year": 2018,
+    "genre": "Social Deduction",
+    "platform": "PC, Mobile, Switch, PlayStation, Xbox",
+    "avg_completion_hours": 1
+  },
+  {
+    "title": "Candy Crush Saga",
+    "developer": "King",
+    "release_year": 2012,
+    "genre": "Puzzle",
+    "platform": "Mobile, Web",
+    "avg_completion_hours": 1
+  },
+  {
+    "title": "Brain Out",
+    "developer": "Focus apps",
+    "release_year": 2019,
+    "genre": "Puzzle",
+    "platform": "Mobile",
+    "avg_completion_hours": 1
+  }
+]
