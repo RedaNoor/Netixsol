@@ -7,6 +7,7 @@ A LangChain rebuild of an earlier raw-Python ReAct agent. Adds LCEL chains, conv
 ```
 .
 ├── langchain_agent.ipynb        # main notebook (setup, tools, agent, memory, structured output)
+├── Writeup.pdf
 ├── data/
 │   └── games.json               # local game database used by the lookup_game tool
 ├── .env                         # holds GROQ_API_KEY (and optionally OPENROUTER_API_KEY)
