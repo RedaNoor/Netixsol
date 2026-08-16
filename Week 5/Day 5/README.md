@@ -172,10 +172,3 @@ See:
 - `docs/monitoring_checklist.md`
 - `docs/slide_outline.md`
 
-## 11. Google Colab
-
-Colab can run the agent and evaluation. Upload the repository, install `requirements.txt`, create `.env`, and set the OpenRouter key. For the final API demonstration, VS Code/local Python is recommended because Colab runtimes are temporary.
-
-## 12. Scope note about fuzzy search and ticket categorization
-
-This capstone does **not** implement fuzzy user-name search or a support-ticket category classifier. Therefore reports such as “fuzzy search returns the typed name” or “network error is categorized as general” are **not defects in this codebase**; those features belong to a different application scope. If the instructor expects ticket triage instead of proposal generation, the use case should be changed explicitly and the evaluation suite redesigned around ticket categories.
