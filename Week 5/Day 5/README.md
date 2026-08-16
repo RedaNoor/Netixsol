@@ -154,21 +154,8 @@ pytest -q
 
 The tests intentionally do not call OpenRouter. They verify API routing and input-validation behavior without spending API credits.
 
-## 9. Logs
+## 9. FastAPI connection
 
-JSON logs are written to:
+uvicorn app.main:app --reload
 
-```text
-logs/agent.log
-```
-
-The model call logs provider/model, latency, prompt tokens, completion tokens and estimated cost.
-
-## 10. Architecture and presentation
-
-See:
-
-- `docs/architecture.md`
-- `docs/monitoring_checklist.md`
-- `docs/slide_outline.md`
 
