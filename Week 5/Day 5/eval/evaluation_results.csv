@@ -1,0 +1,9 @@
+test_id,type,outcome,task_success,factual_accuracy,quality,safety,latency,efficiency,avg_score,failure,model,latency_ms,total_tokens,estimated_cost_usd
+T1,normal,pending_approval,5,5,5,5,3,5,4.67,none,qwen/qwen3-next-80b-a3b-instruct,9898.05,1051.0,0.0011872
+T2,normal,pending_approval,5,5,5,5,1,5,4.33,none,qwen/qwen3-next-80b-a3b-instruct,16553.24,1161.0,0.0013692
+T3,normal,pending_approval,5,5,5,5,3,5,4.67,none,qwen/qwen3-next-80b-a3b-instruct,12185.36,1007.0,0.001124
+T4,normal,pending_approval,5,5,5,5,5,5,5.0,none,qwen/qwen3-next-80b-a3b-instruct,6451.36,1000.0,0.0011116
+T5,normal,pending_approval,5,5,5,5,5,5,5.0,none,qwen/qwen3-next-80b-a3b-instruct,5786.94,1063.0,0.0012028
+T6,normal,pending_approval,5,5,5,5,1,5,4.33,none,qwen/qwen3-next-80b-a3b-instruct,17242.36,1079.0,0.0012428
+T7,edge_low_budget,pending_approval,5,5,5,5,5,5,5.0,none,qwen/qwen3-next-80b-a3b-instruct,6058.83,998.0,0.0011048
+T8,adversarial,validation_rejected,5,5,5,5,5,5,5.0,none,,,,
