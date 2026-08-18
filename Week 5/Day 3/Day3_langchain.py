@@ -474,3 +474,94 @@ else:
 # 
 # **Reach for `LangGraph`** the moment the workflow has more than one distinct phase, needs a self-correction or multi-agent loop, must pause for a human before an irreversible action, or needs to survive a process restart mid-workflow (for example a long-running approval that a user might not respond to for hours). Task 3's self-correction loop and Task 4's approval gate are exactly the two signals that mean "this needs LangGraph, not a plain executor."
 # 
+# %% [code] Cell 34 - Interactive Research Assistant
+# Interactive chat with the research assistant workflow
+if __name__ == "__main__":
+    print("\n" + "="*70)
+    print("🔬 RESEARCH ASSISTANT AGENT")
+    print("="*70)
+    print("I can help you research topics by:")
+    print("  • Planning a search strategy")
+    print("  • Retrieving web documents")
+    print("  • Generating and self-critiquing answers")
+    print("  • Getting human approval before final reports")
+    print("\n💡 Type your research question or 'quit' to exit")
+    print("="*70 + "\n")
+    
+    session_counter = 1
+    
+    while True:
+        topic = input("🔍 Your research question: ").strip()
+        
+        if topic.lower() in ['quit', 'exit', 'bye']:
+            print("👋 Goodbye! Research complete.")
+            break
+            
+        if not topic:
+            continue
+        
+        # Create a new session for each question
+        thread_id = f"chat-session-{session_counter}"
+        config = {"configurable": {"thread_id": thread_id}}
+        init_state = make_init_state(topic)
+        
+        print("\n" + "-"*70)
+        print("🤖 Agent is researching...\n")
+        
+        try:
+            # Run the graph until it hits the interrupt
+            result = full_graph.invoke(init_state, config)
+            
+            # Check if we hit an interrupt (human approval needed)
+            if "__interrupt__" in result:
+                print("⏸️  Agent needs your approval before sending the final report.")
+                print("\n📄 Draft preview:")
+                print("-"*70)
+                print(result.get("draft", "(No draft available)")[:500] + "...")
+                print("-"*70)
+                
+                # Get user decision
+                while True:
+                    decision = input("\n✅ Approve sending this report? (yes/no): ").strip().lower()
+                    if decision in ['yes', 'y']:
+                        approved = True
+                        break
+                    elif decision in ['no', 'n']:
+                        approved = False
+                        break
+                    else:
+                        print("Please answer 'yes' or 'no'")
+                
+                # Resume with the decision
+                resumed = full_graph.invoke(
+                    Command(resume={"approved": approved}), 
+                    config
+                )
+                
+                print("\n" + "="*70)
+                print("📊 FINAL RESULT")
+                print("="*70)
+                print(resumed["final_output"])
+                
+                # Show the reasoning log
+                print("\n" + "-"*70)
+                print("📋 RESEARCH PROCESS LOG:")
+                print("-"*70)
+                for line in resumed["log"]:
+                    print(f"  {line}")
+                print("="*70 + "\n")
+                
+            else:
+                # No interrupt (shouldn't happen in our workflow, but just in case)
+                print("="*70)
+                print("📊 FINAL RESULT")
+                print("="*70)
+                print(result.get("final_output", "(No output)"))
+                print("="*70 + "\n")
+                
+        except Exception as e:
+            print(f"❌ Error: {e}\n")
+            print("Please try a different question.\n")
+            continue
+        
+        session_counter += 1
