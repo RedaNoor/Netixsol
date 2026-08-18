@@ -726,3 +726,54 @@ else:
 # 
 # **Overall conclusion:** use the sequential Crew for this specific fixed-dependency analytics workflow. Use the hierarchical pattern when dynamic delegation and manager review provide enough value to justify the additional latency and token cost.
 #
+# %% [code] Cell 40 - Interactive Sales Analyst Chat
+# Interactive chat with the video game sales analyst crew
+# %% [code] Cell 40 - Lightning Fast Chat
+# Direct query mode - skip the multi-agent pipeline for speed
+if __name__ == "__main__":
+    print("\n" + "="*60)
+    print("🎮 QUICK SALES LOOKUP")
+    print("="*60)
+    print("Ask about sales data (type 'quit' to exit)\n")
+    
+    # Create a single agent with the sales tool
+    fast_agent = Agent(
+        role="Sales Data Assistant",
+        goal="Quickly answer questions about video game sales data",
+        backstory="You query sales data directly and give concise answers",
+        tools=[game_sales_tool],
+        llm=make_llm(temperature=0.1),
+        verbose=False,
+        allow_delegation=False,
+    )
+    
+    while True:
+        question = input("📊 You: ").strip()
+        
+        if question.lower() in ['quit', 'exit', 'bye']:
+            print("👋 Goodbye!")
+            break
+            
+        if not question:
+            continue
+        
+        try:
+            task = Task(
+                description=f"Answer this question using game_sales_query: {question}",
+                expected_output="Concise answer with specific numbers",
+                agent=fast_agent,
+            )
+            
+            crew = Crew(
+                agents=[fast_agent],
+                tasks=[task],
+                process=Process.sequential,
+                verbose=False,
+            )
+            
+            result = asyncio.run(crew.kickoff_async())
+            print("\n" + result.raw if hasattr(result, "raw") else result)
+            print("\n" + "-"*60 + "\n")
+            
+        except Exception as e:
+            print(f"❌ Error: {e}\n")
