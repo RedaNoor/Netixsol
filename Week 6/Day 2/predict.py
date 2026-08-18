@@ -1,5 +1,5 @@
 """
-predict.py — Week 6 Day 2 deliverable.
+predict.py 
 
 Clean, documented, callable wrappers around the saved match-winner and top-player models.
 This is exactly the interface Day 4's LangChain/LangGraph tools wrap directly.
