@@ -1,4 +1,3 @@
-# ask_agent.py
 import sys
 from agent_foundations import Agent, client, MODEL, tools, tool_functions
 
