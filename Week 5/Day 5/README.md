@@ -1,4 +1,4 @@
-# Web3Geeks Capstone — Production-Ready Client Onboarding & Proposal Agent
+# Web3Geeks Capstone: Production Ready Client Onboarding & Proposal Agent
 
 A LangGraph + OpenRouter + FastAPI capstone implementing validation, external/local data sources, lead qualification, structured proposal generation, self-correction, human approval, evaluation and monitoring.
 
@@ -20,7 +20,7 @@ Python 3.12.x
 
 ## 1. OpenRouter setup
 
-This version uses **OpenRouter instead of mock mode**. OpenRouter exposes an OpenAI-compatible API, so the project uses the OpenAI Python client with `base_url=https://openrouter.ai/api/v1`. The default model is `openai/gpt-4.1-mini`.
+This notebook uses **OpenRouter**. OpenRouter exposes an OpenAI-compatible API, so the project uses the OpenAI Python client with `base_url=https://openrouter.ai/api/v1`. The default model is `openai/gpt-4.1-mini`.
 
 Create a `.env` file from `.env.example`:
 
@@ -32,8 +32,6 @@ OPENROUTER_SITE_URL=http://localhost:8000
 OPENROUTER_APP_NAME=Web3Geeks Capstone Agent
 ```
 
-**Never commit `.env`.** `.gitignore` already excludes it.
-
 ## 2. Local setup
 
 Windows PowerShell:
@@ -43,15 +41,6 @@ python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 Copy-Item .env.example .env
-```
-
-macOS/Linux:
-
-```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
 ```
 
 Edit `.env` and insert your OpenRouter key.
@@ -143,8 +132,6 @@ Criteria are scored 1–5:
 - token efficiency
 
 The cases include six normal requests, one low-budget/timeline edge case, and one prompt-injection adversarial case.
-
-Do not submit fabricated evaluation numbers. Run the evaluator with your configured model and include the generated CSV.
 
 ## 8. Tests
 
