@@ -562,3 +562,11 @@ print("Integration test passed.")
 # 
 # LangChain made the agent loop much easier to implement because `AgentExecutor` handles tool-call parsing, tool dispatch, feeding observations back to the model, and stopping conditions that I previously implemented manually in the raw-Python agent. Tool registration also became simpler because `@tool` uses the function signature and docstring to expose the tool's interface instead of requiring a manually constructed tool schema. The main abstraction leak was visibility into the execution process: LangChain manages the prompt formatting, scratchpad, tool-calling flow, and memory wiring internally, so debugging can be harder when something does not behave as expected. The memory integration issue demonstrated this directly because history could be stored correctly while being omitted from the agent prompt, and additional details such as model metadata require explicit callbacks or tracing rather than the simple logging used in the raw-Python implementation.
 # 
+# %% [code] Cell 35 - Quick Chat
+if __name__ == "__main__":
+    config = {"configurable": {"session_id": "chat-session-1"}}
+    print("Chat with the agent (type 'quit' to exit)\n")
+    while True:
+        q = input("You: ").strip()
+        if q.lower() == 'quit': break
+        if q: print("Agent:", structured_agent_with_memory.invoke({"input": q}, config=config)["output"], "\n")
