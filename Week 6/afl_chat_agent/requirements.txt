@@ -1,0 +1,11 @@
+langchain==0.3.27
+langchain-openai==0.3.28
+langchain-community==0.3.27
+langchain-core==0.3.72
+langchain-groq==0.2.5
+langchain-huggingface==0.1.2
+faiss-cpu==1.9.0
+sentence-transformers==3.3.1
+pandas==2.2.3
+pyarrow==17.0.0
+python-dotenv==1.0.1
