@@ -1,0 +1,12 @@
+langchain==0.3.27
+langchain-openai==0.3.28
+langchain-community==0.3.27
+langchain-core==0.3.72
+langgraph==0.2.60
+langgraph-checkpoint==2.0.26
+pydantic==2.9.2
+scikit-learn==1.8.0
+joblib==1.4.2
+pandas==2.2.3
+pyarrow==17.0.0
+python-dotenv==1.0.1
