@@ -1,6 +1,6 @@
-# Task 2 — Design Conversation Flows
+# Task 2: Design Conversation Flows
 
-**Week 7 Capstone — Day 1: Foundations of AI Voice Agents & Conversation Design**
+**Foundations of AI Voice Agents & Conversation Design**
 
 ## Context
 
@@ -24,6 +24,6 @@ One flowchart per scenario, covering the branch points that actually matter for 
 
 ## Notes for implementation
 
-- Buyer, rental, commercial, and investment inquiries share a common qualification structure (budget, location, timeline, property type) but diverge on what "success" looks like at the end of the call — worth building one shared sub-flow for qualification and branching only where the paths actually differ.
+- Buyer, rental, commercial, and investment inquiries share a common qualification structure (budget, location, timeline, property type) but diverge on what "success" looks like at the end of the call, worth building one shared sub-flow for qualification and branching only where the paths actually differ.
 - Returning customer flow needs a lookup step against stored history before the agent responds, so the persona can reference prior context ("last time we spoke about...") instead of restarting the conversation cold.
-- Rescheduling and cancellation are both modification flows against an existing booking — they should share the lookup/confirm structure and differ only in the final action (calendar update vs calendar delete + confirmation).
+- Rescheduling and cancellation are both modification flows against an existing booking, they should share the lookup/confirm structure and differ only in the final action (calendar update vs calendar delete + confirmation).
