@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AFL Assistant</title>
+<style>
+  :root { --brand: #2b6e3f; --bg: #f4f6f4; --bubble-user: #2b6e3f; --bubble-bot: #ffffff; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; background: var(--bg);
+         display: flex; flex-direction: column; height: 100vh; }
+  header { background: var(--brand); color: white; padding: 14px 20px; font-weight: 600; font-size: 18px; }
+  #chat { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+  .msg { max-width: 70%; padding: 10px 14px; border-radius: 14px; line-height: 1.4; white-space: pre-wrap; }
+  .user { align-self: flex-end; background: var(--bubble-user); color: white; border-bottom-right-radius: 4px; }
+  .bot { align-self: flex-start; background: var(--bubble-bot); border: 1px solid #ddd; border-bottom-left-radius: 4px; }
+  .meta { font-size: 11px; color: #888; margin-top: 4px; }
+  .prediction { border-left: 3px solid #d98c00; }
+  #inputRow { display: flex; padding: 14px; gap: 8px; border-top: 1px solid #ddd; background: white; }
+  #msgInput { flex: 1; padding: 10px 14px; border-radius: 20px; border: 1px solid #ccc; font-size: 14px; }
+  #sendBtn { background: var(--brand); color: white; border: none; padding: 10px 20px; border-radius: 20px;
+             cursor: pointer; font-size: 14px; }
+  #sendBtn:disabled { opacity: 0.5; cursor: default; }
+  .typing { color: #888; font-style: italic; }
+</style>
+</head>
+<body>
+<header>AFL Assistant</header>
+<div id="chat"></div>
+<div id="inputRow">
+  <input id="msgInput" type="text" placeholder="Ask about a team, player, match, or prediction..." autocomplete="off">
+  <button id="sendBtn">Send</button>
+</div>
+
+<script>
+const chat = document.getElementById('chat');
+const input = document.getElementById('msgInput');
+const sendBtn = document.getElementById('sendBtn');
+const conversationId = crypto.randomUUID();
+
+function addMessage(text, sender, meta) {
+  const wrap = document.createElement('div');
+  wrap.className = 'msg ' + sender + (meta && meta.is_prediction ? ' prediction' : '');
+  wrap.textContent = text;
+  chat.appendChild(wrap);
+  if (meta) {
+    const metaEl = document.createElement('div');
+    metaEl.className = 'meta';
+    metaEl.style.alignSelf = sender === 'user' ? 'flex-end' : 'flex-start';
+    let parts = [];
+    if (meta.intent) parts.push('intent: ' + meta.intent);
+    if (meta.tools_called && meta.tools_called.length) parts.push('tool: ' + meta.tools_called.join(', '));
+    if (meta.latency_ms) parts.push(meta.latency_ms.toFixed(0) + 'ms');
+    metaEl.textContent = parts.join(' · ');
+    chat.appendChild(metaEl);
+  }
+  chat.scrollTop = chat.scrollHeight;
+}
+
+async function send() {
+  const text = input.value.trim();
+  if (!text) return;
+  addMessage(text, 'user');
+  input.value = '';
+  sendBtn.disabled = true;
+
+  const typingEl = document.createElement('div');
+  typingEl.className = 'msg bot typing';
+  typingEl.textContent = 'thinking...';
+  chat.appendChild(typingEl);
+  chat.scrollTop = chat.scrollHeight;
+
+  try {
+    const res = await fetch('/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text, conversation_id: conversationId }),
+    });
+    const data = await res.json();
+    typingEl.remove();
+    if (!res.ok) {
+      addMessage('Error: ' + (data.detail || 'request failed'), 'bot');
+    } else {
+      addMessage(data.response, 'bot', data);
+    }
+  } catch (e) {
+    typingEl.remove();
+    addMessage('Network error — is the API running?', 'bot');
+  }
+  sendBtn.disabled = false;
+  input.focus();
+}
+
+sendBtn.addEventListener('click', send);
+input.addEventListener('keydown', e => { if (e.key === 'Enter') send(); });
+
+addMessage("Ask me anything about AFL — teams, players, matches, stats, or predictions.", 'bot');
+</script>
+</body>
+</html>

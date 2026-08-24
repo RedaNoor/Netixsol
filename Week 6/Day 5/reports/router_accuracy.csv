@@ -1,21 +1,21 @@
 id,query,expected,predicted,correct,confidence,reasoning
-r_01,Who won the 2024 AFL Grand Final?,retrieval,retrieval,True,0.9,This question requires looking up specific historical data about the 2024 AFL Grand Final.
+r_01,Who won the 2024 AFL Grand Final?,retrieval,retrieval,True,0.9,This question requires looking up specific data about the outcome of a future event.
 r_02,How many disposals did Patrick Dangerfield have last round?,retrieval,retrieval,True,0.9,"The question asks for specific statistics from a past match, which requires looking up data."
-r_03,What's Hawthorn's head-to-head record against Carlton?,retrieval,retrieval,True,0.9,The question asks for specific historical data regarding the head-to-head record between two teams.
+r_03,What's Hawthorn's head-to-head record against Carlton?,retrieval,retrieval,True,0.9,This question requires looking up specific historical data about the matches between Hawthorn and Carlton.
 r_04,List the players on Brisbane Lions' roster this season.,retrieval,retrieval,True,0.9,"The question asks for specific data about the current roster of the Brisbane Lions, which requires looking up real-time information."
 r_05,Who led the league in fantasy points in 2024?,retrieval,retrieval,True,0.9,This question requires looking up specific data about fantasy points for the 2024 season.
 r_06,What's a behind in AFL scoring?,factual,factual,True,0.9,The question asks for a conceptual explanation of a scoring term in AFL.
-r_07,When does the AFL finals series usually start?,factual,factual,True,0.9,"The question asks for general knowledge about the timing of the AFL finals series, which is a factual inquiry."
-r_08,Explain how the AFL draft works.,factual,factual,True,0.95,"The question asks for a conceptual explanation of the AFL draft process, which falls under general knowledge."
+r_07,When does the AFL finals series usually start?,factual,factual,True,0.9,The question asks for general knowledge about the timing of the AFL finals series.
+r_08,Explain how the AFL draft works.,factual,factual,True,0.95,"The question asks for a conceptual explanation of the AFL draft, which falls under general knowledge."
 r_09,Will the Pies beat the Cats this week?,prediction_match,prediction_match,True,0.9,The question is asking for a prediction about the outcome of an upcoming match between the Pies and the Cats.
-r_10,What's Hawthorn's chance of beating Carlton?,prediction_match,prediction_match,True,0.9,The question asks for a prediction about the outcome of a future match between Hawthorn and Carlton.
+r_10,What's Hawthorn's chance of beating Carlton?,prediction_match,prediction_match,True,0.9,The question asks for a prediction about the outcome of an upcoming match between Hawthorn and Carlton.
 r_11,Who's going to win Geelong vs Richmond?,prediction_match,prediction_match,True,0.9,The question asks for a prediction about the outcome of an upcoming match between Geelong and Richmond.
 r_12,Who'll top-score for Geelong this week?,prediction_player,prediction_player,True,0.9,The question is asking for a prediction about a player's performance in an upcoming match.
-r_13,How many disposals will Dangerfield get next round?,prediction_player,prediction_player,True,0.9,The question is asking for an expectation of disposals for Dangerfield in an upcoming match.
+r_13,How many disposals will Dangerfield get next round?,prediction_player,prediction_player,True,0.9,The question is asking for an expectation of disposals for a player in an upcoming match.
 r_14,Which Hawthorn player is likely to have the best fantasy score this week?,prediction_player,prediction_player,True,0.9,The question asks for a prediction about which player will perform best in terms of fantasy scoring in an upcoming match.
 r_15,What's the weather like in Melbourne today?,off_topic,off_topic,True,0.9,"The question is about the weather, which is not related to AFL."
 r_16,Who won the last Super Bowl?,off_topic,off_topic,True,0.9,"The question is about the Super Bowl, which is not related to AFL."
 r_17,Write me a poem about the ocean.,off_topic,off_topic,True,0.9,"The request is for a poem about the ocean, which is not related to AFL."
-r_18,What about last time?,ambiguous,ambiguous,True,0.8,The question lacks context about which teams or players are being referred to.
-r_19,Tell me about him.,ambiguous,ambiguous,True,0.7,"The message lacks context about who 'him' refers to, making it unclear."
-r_20,How did they go last season compared to this one?,ambiguous,ambiguous,True,0.7,The question lacks specific context about which teams or players are being referred to.
+r_18,What about last time?,ambiguous,ambiguous,True,0.7,The question lacks context about which teams or players are being referred to.
+r_19,Tell me about him.,ambiguous,ambiguous,True,0.5,"The message lacks context about who 'him' refers to, making it unclear."
+r_20,How did they go last season compared to this one?,ambiguous,ambiguous,True,0.7,"The question lacks specific context about which team or player is being referred to, making it unclear."
