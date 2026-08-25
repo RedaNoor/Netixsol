@@ -1,0 +1,18 @@
+school_id,school_name,area,city,distance_km,rating
+S001,DHA International School,DHA Phase 6,Lahore,2.1,4.5
+S002,Bahria School,Bahria Town,Lahore,1.4,4.3
+S003,G-11 Public School,G-11,Islamabad,1.2,4.0
+S004,Park View School,Park View City,Lahore,1.8,4.2
+S005,Smart City School,Islamabad Expressway,Islamabad,2.0,4.1
+S006,Canal View School,Canal Road,Lahore,2.4,4.2
+S007,Bahria International School,Bahria Town,Rawalpindi,1.6,4.4
+S008,F-11 International School,F-11,Islamabad,1.3,4.6
+S009,DHA Phase 8 Grammar School,DHA Phase 8,Lahore,2.5,4.1
+S010,Johar Town Grammar School,Johar Town,Lahore,0.9,4.2
+S011,Gulberg Grammar School,Gulberg,Lahore,2.3,4.5
+S012,F-10 Grammar School,F-10,Islamabad,2.4,4.1
+S013,DHA Islamabad Model School,DHA Islamabad,Islamabad,2.4,4.7
+S014,Askari 14 Grammar School,Askari 14,Rawalpindi,1.5,4.2
+S015,DHA Karachi Public School,DHA Karachi,Karachi,2.0,4.6
+S016,Bahria Town Karachi Academy,Bahria Town Karachi,Karachi,1.6,4.6
+S017,Clifton Public School,Clifton,Karachi,1.2,3.8

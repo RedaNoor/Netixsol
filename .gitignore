@@ -10,6 +10,7 @@ __pycache__/
 .Python
 build/
 dist/
+*.db
 
 # Virtual environments
 .venv/
@@ -26,3 +27,5 @@ env/
 
 # Logs
 *.log
+
+

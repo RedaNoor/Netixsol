@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "What is the price of Green Valley Residency?",
+    "type": "structured",
+    "expected": "85000000"
+  },
+  {
+    "id": 2,
+    "question": "Is Lake View Apartments available?",
+    "type": "structured",
+    "expected": "Available"
+  },
+  {
+    "id": 3,
+    "question": "How many bedrooms does P001 have?",
+    "type": "structured",
+    "expected": "5"
+  },
+  {
+    "id": 4,
+    "question": "What is the size of Capital Heights?",
+    "type": "structured",
+    "expected": "1200"
+  },
+  {
+    "id": 5,
+    "question": "Who developed Green Valley Residency?",
+    "type": "structured",
+    "expected": "Green Valley Developers"
+  },
+  {
+    "id": 6,
+    "question": "What is the down payment for P002?",
+    "type": "structured",
+    "expected": "20"
+  },
+  {
+    "id": 7,
+    "question": "What is the installment duration for P001?",
+    "type": "structured",
+    "expected": "24"
+  },
+  {
+    "id": 8,
+    "question": "Which properties are under 5 crore?",
+    "type": "structured",
+    "expected": "budget filter"
+  },
+  {
+    "id": 9,
+    "question": "Which properties are available in Lahore?",
+    "type": "structured",
+    "expected": "availability + city"
+  },
+  {
+    "id": 10,
+    "question": "Which properties have 3 bedrooms?",
+    "type": "structured",
+    "expected": "bedrooms filter"
+  },
+  {
+    "id": 11,
+    "question": "What amenities does Green Valley Residency offer?",
+    "type": "semantic",
+    "expected": "verified amenities"
+  },
+  {
+    "id": 12,
+    "question": "Is Lake View Apartments suitable for families?",
+    "type": "semantic",
+    "expected": "family context"
+  },
+  {
+    "id": 13,
+    "question": "What schools are near P002?",
+    "type": "semantic",
+    "expected": "Bahria School"
+  },
+  {
+    "id": 14,
+    "question": "What hospitals are nearby P004?",
+    "type": "semantic",
+    "expected": "Park View Medical Centre"
+  },
+  {
+    "id": 15,
+    "question": "Describe the Green Valley developer.",
+    "type": "semantic",
+    "expected": "developer profile"
+  },
+  {
+    "id": 16,
+    "question": "What lifestyle does Lake View Apartments offer?",
+    "type": "semantic",
+    "expected": "modern apartment community"
+  },
+  {
+    "id": 17,
+    "question": "What are the payment-plan benefits for P002?",
+    "type": "semantic",
+    "expected": "20 percent + 36 months"
+  },
+  {
+    "id": 18,
+    "question": "Which property could suit an investment purpose?",
+    "type": "semantic",
+    "expected": "investment-oriented evidence"
+  },
+  {
+    "id": 19,
+    "question": "Which property would suit a family?",
+    "type": "semantic",
+    "expected": "family-oriented evidence"
+  },
+  {
+    "id": 20,
+    "question": "What should the assistant do if a property fact is unavailable?",
+    "type": "semantic",
+    "expected": "do not guess; escalate"
+  }
+]

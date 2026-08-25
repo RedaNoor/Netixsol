@@ -1,0 +1,41 @@
+property_id,name,developer,city,area,type,bedrooms,size_sqft,price,status,purpose
+P001,Green Valley Residency,Green Valley Developers,Lahore,DHA Phase 6,House,5,3500,85000000,Available,Family
+P002,Lake View Apartments,Lake View Developers,Lahore,Bahria Town,Apartment,3,1800,32000000,Available,Family
+P003,Capital Heights,Capital Developers,Islamabad,G-11,Apartment,2,1200,18500000,Sold,Investment
+P004,Park View Villas,Park View Developers,Lahore,Park View City,House,3,2400,42000000,Available,Family
+P005,Smart City Heights,Smart City Developers,Islamabad,Islamabad Expressway,Apartment,3,1600,24000000,Available,Investment
+P006,Canal Residency,Canal Developers,Lahore,Canal Road,House,4,3000,62000000,Available,Family
+P007,Metro Homes,Metro Developers,Rawalpindi,Bahria Town,House,3,2200,28000000,Available,Family
+P008,Executive Enclave,Executive Developers,Islamabad,F-11,House,4,3200,72000000,Available,Investment
+P009,Cedar Villas,Lake View Developers,Lahore,Park View City,House,4,2952,52188408,Reserved,Investment
+P010,Maple Estate,Horizon Developers,Lahore,DHA Phase 6,House,3,2079,40035303,Reserved,Family
+P011,Metro Arcade,Canal Developers,Lahore,DHA Phase 6,Commercial,0,1938,68012172,Available,Commercial
+P012,Al-Noor Corporate Tower,Capital Developers,Islamabad,Islamabad Expressway,Commercial,0,2996,102133640,Available,Investment
+P013,Park View Arcade,Lake View Developers,Lahore,Gulberg,Commercial,0,1126,42369128,Sold,Commercial
+P014,Executive Apartments,Executive Developers,Islamabad,Islamabad Expressway,Apartment,2,1572,31397556,Available,Rental
+P015,Coastal Villas,Coastal Heights Developers,Karachi,Clifton,House,3,1890,42661080,Available,Investment
+P016,Smart City Enclave,Skyline Builders,Islamabad,Bahria Town,House,6,3516,71511924,Available,Investment
+P017,Silver Oak Block,Metro Developers,Rawalpindi,Bahria Town,Plot,0,3600,47426400,Available,Investment
+P018,Falcon Plaza,Horizon Developers,Lahore,Johar Town,Commercial,0,2376,100989504,Sold,Investment
+P019,Emaar Crown Arcade,Coastal Heights Developers,Karachi,Clifton,Commercial,0,2580,90769560,Available,Investment
+P020,Canal Block,Coastal Heights Developers,Karachi,Bahria Town Karachi,Plot,0,4500,68607000,Reserved,Investment
+P021,Capital Villas,Park View Developers,Lahore,DHA Phase 6,House,3,1833,46365735,Available,Investment
+P022,Metro Towers,Lake View Developers,Lahore,Canal Road,Apartment,4,2516,46337172,Available,Rental
+P023,Marina Apartments,Coastal Heights Developers,Karachi,Bahria Town Karachi,Apartment,3,1815,34156485,Available,Family
+P024,Metro Residency,Park View Developers,Lahore,DHA Phase 8,House,4,2484,59499252,Reserved,Family
+P025,Heritage Villas,Heritage Developers,Karachi,DHA Karachi,House,3,1722,39712764,Sold,Investment
+P026,Marina Residency,Park View Developers,Lahore,Park View City,House,4,2396,45801936,Sold,Rental
+P027,Green Valley Estate,Metro Developers,Rawalpindi,Askari 14,House,3,1686,41907216,Available,Family
+P028,Coastal Villas,Coastal Heights Developers,Karachi,DHA Karachi,House,6,3300,73906800,Sold,Investment
+P029,Lake View Residency,Coastal Heights Developers,Karachi,DHA Karachi,House,3,2223,46989774,Available,Investment
+P030,Al-Noor Estate,Coastal Heights Developers,Karachi,Bahria Town Karachi,House,3,2166,43001598,Available,Family
+P031,Cedar Court,Horizon Developers,Lahore,Bahria Town,Apartment,3,1998,31314654,Available,Rental
+P032,Metro Residences,Capital Developers,Islamabad,F-11,Apartment,1,818,15054472,Reserved,Family
+P033,Horizon Estate,Executive Developers,Islamabad,Islamabad Expressway,House,3,2160,54185760,Available,Investment
+P034,Golden Palm Enclave,Coastal Heights Developers,Karachi,Clifton,House,5,3010,61178250,Sold,Investment
+P035,Maple Arcade,Metro Developers,Rawalpindi,Bahria Town,Commercial,0,3958,135703988,Available,Commercial
+P036,Marina Heights,Metro Developers,Rawalpindi,Bahria Town,Apartment,1,894,16781274,Available,Family
+P037,Marina Farmhouses,Lake View Developers,Lahore,DHA Phase 8,Plot,0,2250,26768250,Sold,Investment
+P038,Park View Manor,Metro Developers,Rawalpindi,Bahria Town,House,4,2472,45998976,Sold,Rental
+P039,Green Valley Arcade,Park View Developers,Lahore,Gulberg,Commercial,0,1732,64610528,Available,Investment
+P040,Rose Garden Apartments,Executive Developers,Islamabad,Islamabad Expressway,Apartment,1,866,13390092,Available,Investment

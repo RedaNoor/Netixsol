@@ -1,0 +1,19 @@
+location_id,city,area,description,latitude,longitude
+L001,Lahore,DHA Phase 6,"Established premium residential area with schools, shopping and healthcare nearby",31.4697,74.408
+L002,Lahore,DHA Phase 8,Newer DHA sector popular with families for its wide roads and parks,31.445,74.435
+L003,Lahore,Bahria Town,"Planned residential community with parks, schools and commercial areas",31.365,74.185
+L004,Lahore,Park View City,Planned gated community with parks and family facilities,31.411,74.198
+L005,Lahore,Canal Road,Major residential and commercial corridor with access to schools and hospitals,31.5,74.3
+L006,Lahore,Johar Town,Central residential locality close to markets and educational institutes,31.4697,74.2728
+L007,Lahore,Gulberg,Established commercial and residential hub in the heart of the city,31.5204,74.3587
+L008,Islamabad,G-11,Established urban sector with access to commercial and healthcare facilities,33.67,73.011
+L009,Islamabad,F-10,Premium sector known for its green belts and quiet residential streets,33.698,73.014
+L010,Islamabad,F-11,"Premium sector with commercial services, schools and healthcare access",33.685,72.995
+L011,Islamabad,Bahria Town,Large planned community on the outskirts with family amenities,33.533,73.244
+L012,Islamabad,Islamabad Expressway,Accessible corridor with developing residential communities,33.6,73.13
+L013,Islamabad,DHA Islamabad,Newer DHA phases with modern infrastructure and gated security,33.515,73.16
+L014,Rawalpindi,Bahria Town,Planned residential area with family-oriented facilities,33.54,73.12
+L015,Rawalpindi,Askari 14,Military-managed housing scheme known for order and security,33.61,73.07
+L016,Karachi,DHA Karachi,Coastal premium residential area with well-maintained infrastructure,24.8,67.05
+L017,Karachi,Bahria Town Karachi,Large scale planned township on the outskirts of the city,24.885,67.21
+L018,Karachi,Clifton,Upscale seafront neighborhood with commercial and residential towers,24.8137,67.03

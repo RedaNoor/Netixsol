@@ -1,0 +1,44 @@
+Q: What information can the property assistant provide?
+A: The assistant can provide verified property, price, availability, location, amenities, schools, hospitals, developers and payment-plan information contained in the company knowledge base.
+
+Q: Can the assistant guarantee property availability?
+A: Availability should be taken from the latest verified company data. If availability is missing or stale, the assistant should ask the user to confirm with the sales team.
+
+Q: What happens if information is not in the knowledge base?
+A: The assistant must not guess. It should clearly state that verified information is unavailable and offer escalation to a human agent.
+
+Q: Can I filter properties by budget?
+A: Yes. Budget is a structured constraint and should be applied using database filtering before recommendations are generated.
+
+Q: Can I search for family-friendly properties?
+A: Yes. The recommendation engine can combine purpose, amenities, location, bedrooms and other verified attributes.
+
+Q: How are property descriptions retrieved?
+A: Brochures, descriptions and FAQs are embedded and retrieved semantically from the vector store.
+
+Q: How are exact prices retrieved?
+A: Prices are stored as structured data and should be retrieved using SQL rather than relying on semantic similarity.
+
+Q: Can the assistant recommend investment properties?
+A: Yes. Recommendations can consider the user's investment purpose, budget, location and verified property information. Investment returns must not be invented.
+
+Q: Does the company have commercial properties available?
+A: Yes. Commercial listings such as plazas and business centers are included in the property table and can be filtered by type.
+
+Q: Can I ask about rental properties?
+A: Yes. Properties marked with a rental purpose can be searched the same way as purchase listings, using the structured property data.
+
+Q: What cities does the company operate in?
+A: The current knowledge base covers Lahore, Islamabad, Rawalpindi and Karachi. Coverage should be confirmed against the latest location data.
+
+Q: Are payment plans available on every property?
+A: Payment plans exist for available properties that are not plots. Sold or reserved listings and plot sales should be confirmed directly with the sales team.
+
+Q: How close are schools and hospitals to a property?
+A: Distance is stored in kilometers in the schools and hospitals tables and is matched to the property by area.
+
+Q: Can the assistant compare two properties?
+A: Yes. Structured attributes such as price, size and bedrooms can be compared directly using the property data.
+
+Q: What should happen if a customer asks about a developer's reputation?
+A: The assistant should answer using the verified developer profile text rather than making subjective claims not present in the data.

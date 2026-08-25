@@ -1,0 +1,18 @@
+hospital_id,hospital_name,area,city,distance_km,rating
+H001,DHA Medical Centre,DHA Phase 6,Lahore,2.5,4.4
+H002,Bahria Hospital,Bahria Town,Lahore,2.0,4.3
+H003,G-11 Medical Centre,G-11,Islamabad,1.5,4.0
+H004,Park View Medical Centre,Park View City,Lahore,2.2,4.1
+H005,Expressway Hospital,Islamabad Expressway,Islamabad,2.7,4.2
+H006,Canal Road Hospital,Canal Road,Lahore,2.1,4.3
+H007,Bahria Hospital Rawalpindi,Bahria Town,Rawalpindi,2.2,4.4
+H008,F-11 Medical Centre,F-11,Islamabad,1.7,4.5
+H009,DHA Phase 8 Medical Centre,DHA Phase 8,Lahore,1.7,4.4
+H010,Johar Town General Hospital,Johar Town,Lahore,1.7,3.9
+H011,Gulberg Medical Centre,Gulberg,Lahore,2.5,4.1
+H012,F-10 Hospital,F-10,Islamabad,2.1,4.0
+H013,DHA Islamabad Hospital,DHA Islamabad,Islamabad,1.8,4.6
+H014,Askari 14 Hospital,Askari 14,Rawalpindi,1.9,4.2
+H015,DHA Karachi General Hospital,DHA Karachi,Karachi,2.4,4.1
+H016,Bahria Town Karachi General Hospital,Bahria Town Karachi,Karachi,2.4,4.0
+H017,Clifton Clinic Complex,Clifton,Karachi,2.3,4.6

@@ -1,4 +1,5 @@
-## Task 1: Modern Voice Agent Architecture
+# Week 7 — Day 1
+## Task 1 — Modern Voice Agent Architecture
 
 ### 1. Objective
 Design a production-grade architecture for a real estate AI voice agent capable of handling phone calls, understanding customer intent, retrieving verified property information, using business tools, maintaining conversation context, and responding naturally in UrduLish.
@@ -156,6 +157,8 @@ Grounded Response
 
 Structured property information such as price, availability, area, and bedrooms should preferably be stored in PostgreSQL.
 
+**Why PostgreSQL doubles as the vector store:** the pgvector extension adds a vector column type and similarity search directly inside PostgreSQL. Since the structured property data already needs PostgreSQL, using pgvector for embeddings too means one database to run, back up, and monitor instead of two. For a single-client catalog in the range of hundreds to a few thousand properties, pgvector comfortably handles the scale, and it lets a single query combine an exact filter (budget, city) with a semantic ranking (brochure similarity) when that's useful. A dedicated vector database like ChromaDB or Qdrant is worth adding later only if the catalog grows into the tens of millions of chunks or the vector workload starts competing with the transactional workload for resources.
+
 ### 6. Memory
 
 #### Short-Term Memory
@@ -261,8 +264,8 @@ Log Activity
 | Speech-to-Text | Deepgram |
 | LLM | OpenAI GPT |
 | Agent Framework | LangGraph + LangChain |
-| Vector Database | ChromaDB |
-| Structured Database | PostgreSQL |
+| Vector Database | PostgreSQL + pgvector |
+| Structured Database | PostgreSQL (also hosts pgvector for semantic search) |
 | TTS | Fish Audio |
 | Backend | FastAPI |
 | Workflow Automation | n8n |
@@ -288,7 +291,7 @@ FASTAPI
 LANGGRAPH AGENT
    │
    ├── MEMORY
-   ├── RAG / CHROMADB
+   ├── RAG / PGVECTOR
    ├── POSTGRESQL
    ├── PROPERTY SEARCH
    ├── GOOGLE CALENDAR

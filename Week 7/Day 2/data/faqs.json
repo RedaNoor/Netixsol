@@ -1,0 +1,92 @@
+[
+  {
+    "id": "F001",
+    "question": "What information can the property assistant provide?",
+    "answer": "The assistant can provide verified property, price, availability, location, amenities, schools, hospitals, developers and payment-plan information contained in the company knowledge base.",
+    "category": "General"
+  },
+  {
+    "id": "F002",
+    "question": "Can the assistant guarantee property availability?",
+    "answer": "Availability should be taken from the latest verified company data. If availability is missing or stale, the assistant should ask the user to confirm with the sales team.",
+    "category": "Availability"
+  },
+  {
+    "id": "F003",
+    "question": "What happens if information is not in the knowledge base?",
+    "answer": "The assistant must not guess. It should clearly state that verified information is unavailable and offer escalation to a human agent.",
+    "category": "Safety"
+  },
+  {
+    "id": "F004",
+    "question": "Can I filter properties by budget?",
+    "answer": "Yes. Budget is a structured constraint and should be applied using database filtering before recommendations are generated.",
+    "category": "Search"
+  },
+  {
+    "id": "F005",
+    "question": "Can I search for family-friendly properties?",
+    "answer": "Yes. The recommendation engine can combine purpose, amenities, location, bedrooms and other verified attributes.",
+    "category": "Recommendations"
+  },
+  {
+    "id": "F006",
+    "question": "How are property descriptions retrieved?",
+    "answer": "Brochures, descriptions and FAQs are embedded and retrieved semantically from the vector store.",
+    "category": "RAG"
+  },
+  {
+    "id": "F007",
+    "question": "How are exact prices retrieved?",
+    "answer": "Prices are stored as structured data and should be retrieved using SQL rather than relying on semantic similarity.",
+    "category": "Structured Retrieval"
+  },
+  {
+    "id": "F008",
+    "question": "Can the assistant recommend investment properties?",
+    "answer": "Yes. Recommendations can consider the user's investment purpose, budget, location and verified property information. Investment returns must not be invented.",
+    "category": "Investment"
+  },
+  {
+    "id": "F009",
+    "question": "Does the company have commercial properties available?",
+    "answer": "Yes. Commercial listings such as plazas and business centers are included in the property table and can be filtered by type.",
+    "category": "Commercial"
+  },
+  {
+    "id": "F010",
+    "question": "Can I ask about rental properties?",
+    "answer": "Yes. Properties marked with a rental purpose can be searched the same way as purchase listings, using the structured property data.",
+    "category": "Rental"
+  },
+  {
+    "id": "F011",
+    "question": "What cities does the company operate in?",
+    "answer": "The current knowledge base covers Lahore, Islamabad, Rawalpindi and Karachi. Coverage should be confirmed against the latest location data.",
+    "category": "General"
+  },
+  {
+    "id": "F012",
+    "question": "Are payment plans available on every property?",
+    "answer": "Payment plans exist for available properties that are not plots. Sold or reserved listings and plot sales should be confirmed directly with the sales team.",
+    "category": "Payment Plans"
+  },
+  {
+    "id": "F013",
+    "question": "How close are schools and hospitals to a property?",
+    "answer": "Distance is stored in kilometers in the schools and hospitals tables and is matched to the property by area.",
+    "category": "Location"
+  },
+  {
+    "id": "F014",
+    "question": "Can the assistant compare two properties?",
+    "answer": "Yes. Structured attributes such as price, size and bedrooms can be compared directly using the property data.",
+    "category": "Recommendations"
+  },
+  {
+    "id": "F015",
+    "question": "What should happen if a customer asks about a developer's reputation?",
+    "answer": "The assistant should answer using the verified developer profile text rather than making subjective claims not present in the data.",
+    "category": "Developers"
+  }
+]

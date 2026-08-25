@@ -1,0 +1,26 @@
+plan_id,property_id,down_payment_percent,installment_months,monthly_installment,notes
+PP001,P001,30,24,2479167,30 percent down payment with 24 monthly installments
+PP002,P002,20,36,711111,20 percent down payment with 36 monthly installments
+PP003,P004,25,24,1312500,25 percent down payment with 24 monthly installments
+PP004,P005,20,36,533333,20 percent down payment with 36 monthly installments
+PP005,P006,30,24,1808333,30 percent down payment with 24 monthly installments
+PP006,P007,20,36,622222,20 percent down payment with 36 monthly installments
+PP007,P008,35,24,1950000,35 percent down payment with 24 monthly installments
+PP008,P011,30,48,991844,30 percent down payment with 48 monthly installments
+PP009,P012,35,24,2766119,35 percent down payment with 24 monthly installments
+PP010,P014,30,48,457881,30 percent down payment with 48 monthly installments
+PP011,P015,30,24,1244282,30 percent down payment with 24 monthly installments
+PP012,P016,20,12,4767462,20 percent down payment with 12 monthly installments
+PP013,P019,15,48,1607378,15 percent down payment with 48 monthly installments
+PP014,P021,20,24,1545524,20 percent down payment with 24 monthly installments
+PP015,P022,35,48,627483,35 percent down payment with 48 monthly installments
+PP016,P023,15,24,1209709,15 percent down payment with 24 monthly installments
+PP017,P027,15,48,742107,15 percent down payment with 48 monthly installments
+PP018,P029,20,48,783163,20 percent down payment with 48 monthly installments
+PP019,P030,35,36,776418,35 percent down payment with 36 monthly installments
+PP020,P031,30,48,456672,30 percent down payment with 48 monthly installments
+PP021,P033,35,48,733766,35 percent down payment with 48 monthly installments
+PP022,P035,20,48,2261733,20 percent down payment with 48 monthly installments
+PP023,P036,30,36,326303,30 percent down payment with 36 monthly installments
+PP024,P039,20,36,1435790,20 percent down payment with 36 monthly installments
+PP025,P040,35,48,181324,35 percent down payment with 48 monthly installments
