@@ -1,10 +1,5 @@
----
-noteId: "5c715350a07311f195900762b9117099"
-tags: []
 
----
-
-# Week 7 — Day 2: Knowledge Base, RAG & Property Intelligence
+#  Knowledge Base, RAG & Property Intelligence
 
 Production-oriented deliverable for a real-estate AI voice agent.
 
