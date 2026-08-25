@@ -1,5 +1,5 @@
-# Week 7 — Day 1
-## Task 5 — Production-Grade System Prompt
+
+## Task 5: Production-Grade System Prompt
 
 ### 1. Purpose
 

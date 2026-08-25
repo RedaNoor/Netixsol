@@ -1,5 +1,5 @@
-# Week 7 — Day 1
-## Task 1 — Modern Voice Agent Architecture
+
+## Task 1: Modern Voice Agent Architecture
 
 ### 1. Objective
 Design a production-grade architecture for a real estate AI voice agent capable of handling phone calls, understanding customer intent, retrieving verified property information, using business tools, maintaining conversation context, and responding naturally in UrduLish.

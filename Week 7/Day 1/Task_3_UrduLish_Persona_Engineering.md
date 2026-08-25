@@ -1,5 +1,4 @@
-# Week 7 — Day 1
-## Task 3 — UrduLish Persona Engineering
+## Task 3: UrduLish Persona Engineering
 
 ### 1. Objective
 
